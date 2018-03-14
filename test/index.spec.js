@@ -14,4 +14,8 @@ describe('Set and retrieve redis key', () => {
   it('should fail if FAIL=true', () => {
     assert.notEqual(process.env.FAIL, 'true');
   });
+
+  it('should return 200 on healthcheck url', async () => {
+    await get('/healthcheck').expect(200);
+  });
 });

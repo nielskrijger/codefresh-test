@@ -33,6 +33,9 @@ const getRedisHandler = async (req, res) => {
 
 app.post('/redis/:key', catchError(setRedisHandler));
 app.get('/redis/:key', catchError(getRedisHandler));
+app.get('/healthcheck', (req, res) => {
+  res.sendStatus(200);
+});
 
 let httpServer;
 
