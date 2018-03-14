@@ -1,0 +1,15 @@
+version: '1.0'
+steps:
+  build_step:
+    title: Building Docker Image
+    type: build
+    image_name: codefresh
+    working_directory: ./
+    dockerfile: Dockerfile
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
+  push_step:
+    title: Pushing to Docker Registry
+    type: push
+    candidate: '${{BuildingDockerImage}}'
+    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
+    registry: codefresh
