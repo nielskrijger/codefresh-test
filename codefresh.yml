@@ -7,6 +7,15 @@ steps:
     working_directory: ./
     dockerfile: Dockerfile
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
+  test_step:
+    type: composition
+    working_directory: $
+    composition: './docker-compose.yml'
+    environment_name: 'codefresh redis test'
+    composition_candidates:
+      test:
+        image: ${{build_step}}
+        command: npm test
   push_step:
     title: Pushing to Docker Registry
     type: push
