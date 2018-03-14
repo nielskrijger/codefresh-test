@@ -6,7 +6,6 @@ services:
     command: npm run test
     environment:
       - REDIS_HOST=redis
-      - FAIL=true
     depends_on:
       - redis
   redis:

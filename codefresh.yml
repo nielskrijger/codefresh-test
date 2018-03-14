@@ -20,3 +20,17 @@ steps:
     candidate: '${{build_step}}'
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
     registry: codefresh
+  deploy:
+    title: Running Deploy Script
+    type: deploy
+    kind: kubernetes
+    cluster: cluster-1@metrix-io
+    namespace: default
+    when:
+      branch:
+        only:
+          - master
+    service: test-service
+    candidate:
+      image: '${{build_step}}'
+      registry: codefresh

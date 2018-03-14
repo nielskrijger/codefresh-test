@@ -15,7 +15,10 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.json(process.env);
+  res.json({
+    version: 2,
+    env: process.env
+  });
 });
 
 const setRedisHandler = async (req, res) => {
