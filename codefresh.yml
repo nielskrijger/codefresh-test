@@ -10,6 +10,6 @@ steps:
   push_step:
     title: Pushing to Docker Registry
     type: push
-    candidate: '${{BuildingDockerImage}}'
+    candidate: '${{build_step}}'
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
     registry: codefresh
