@@ -12,9 +12,8 @@ steps:
     composition: './docker-compose.yml'
     environment_name: 'codefresh redis test'
     composition_candidates:
-      test:
+      test_service:
         image: ${{build_step}}
-        command: npm test
   push_step:
     title: Pushing to Docker Registry
     type: push

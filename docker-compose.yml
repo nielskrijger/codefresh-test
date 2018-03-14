@@ -1,5 +1,12 @@
 version: '3'
 
 services:
+  test_service:
+    image: test:latest
+    command: npm run test
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
   redis:
     image: redis:3.2-alpine
