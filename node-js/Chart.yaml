@@ -1,0 +1,11 @@
+name: node-js
+version: 0.0.3
+description: Event-driven I/O server-side JavaScript environment based on V8
+keywords:
+ - node
+ - javascript
+ - nodejs
+maintainers:
+- name: RTL
+  email: niels.krijger@rtl.nl
+engine: gotpl
