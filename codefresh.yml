@@ -39,6 +39,6 @@ steps:
     image: 'codefresh/plugin-helm:2.8.0'
     environment:
       - CHART_NAME=node-js-0.0.7
-      - RELEASE_NAME=nodejs-test
+      - RELEASE_NAME=codefresh-charts/node-js
       - KUBE_CONTEXT=cluster-1@metrix-io
-      - NAMESPACE=development
+      - NAMESPACE=default
