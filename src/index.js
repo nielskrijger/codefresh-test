@@ -18,7 +18,6 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.json({
-    version: 2,
     env: process.env
   });
 });
