@@ -20,8 +20,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       imagePullSecrets:
-        - name: >-
-            codefresh-generated-676206137628.dkr.ecr.eu-west-1.amazonaws.com-codefresh-default
+        - name: {{ .Values.image.pullSecret}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -31,23 +30,27 @@ spec:
               containerPort: 8080
               protocol: TCP
           env:
-            - name: REDIS_PASSWORD
+          {{- range $name, $secret := .Values.env.secrets }}
+            - name: {{ $name }}
               valueFrom:
                 secretKeyRef:
-                  name: redis
-                  key: redis-password
-            - name: REDIS_HOST
-              value: redis
+                  name: {{ $secret.name  }}
+                  key: {{ $secret.key }}
+          {{- end }}
+          {{- range $name, $value := .Values.env.vars }}
+            - name: {{ $name  }}
+              value: {{ $value | quote  }}
+          {{- end }}
           livenessProbe:
             httpGet:
-              path: /healthcheck
+              path: {{ .Values.healthcheck.path }}
               port: http
             initialDelaySeconds: 180
             timeoutSeconds: 5
             failureThreshold: 6
           readinessProbe:
             httpGet:
-              path: /healthcheck
+              path: {{ .Values.healthcheck.path }}
               port: http
             initialDelaySeconds: 10
             timeoutSeconds: 3
