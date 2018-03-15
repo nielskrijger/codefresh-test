@@ -20,6 +20,11 @@ steps:
     candidate: '${{build_step}}'
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
     registry: codefresh
+  #
+  # With the following you can let Codefresh deploy the entire service
+  # for you. This might be great for a lot of simple use cases where you
+  # just want to deploy a single service and don't care about anything.
+  #
   # deploy:
   #   title: Running Deploy Script
   #   type: deploy
