@@ -37,9 +37,3 @@ steps:
   deploy_helm:
     title: Helm Upgrade
     image: 'codefresh/plugin-helm:2.8.0'
-    environment:
-      - CHART_NAME=node-js
-      - RELEASE_NAME=nodejs-test
-      - KUBE_CONTEXT=cluster-1@metrix-io
-      - NAMESPACE=development
-      - CHART_REPO_URL=https://s3-eu-west-1.amazonaws.com/codefresh-charts/
