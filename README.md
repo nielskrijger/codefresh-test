@@ -16,7 +16,7 @@ $ helm lint .
 
 ## Upload to s3 chart repository
 
-Install [helm s3 plugin](https://github.com/hypnoglow/helm-s3), follow their instructions and create a bucket for you chart.
+Install [helm s3 plugin](https://github.com/hypnoglow/helm-s3), follow their instructions and create a new bucket.
 
 When you feel ready uploaded the chart, go and run:
 
