@@ -16,7 +16,7 @@ $ helm lint .
 
 ## Upload to s3 chart repository
 
-Install [helm s3 plugin](https://github.com/hypnoglow/helm-s3), follow their instructions and create a new bucket.
+Install [helm s3 plugin](https://github.com/hypnoglow/helm-s3), follow their instructions and create a new bucket to hold your charts.
 
 When you feel ready uploaded the chart, go and run:
 
@@ -25,3 +25,5 @@ $ cd ./charts/node-js
 $ helm package .
 $ helm s3 push node-js-[VERSION].tgz [REPO_NAME]
 ```
+
+You can install the helm chart within the Codefresh UI.
