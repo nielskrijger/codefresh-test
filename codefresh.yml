@@ -42,4 +42,4 @@ steps:
       - RELEASE_NAME=nodejs-test
       - KUBE_CONTEXT=cluster-1@metrix-io
       - NAMESPACE=development
-      - CHART_REPO_URL=s3://codefresh-charts/
+      - CHART_REPO_URL=https://s3-eu-west-1.amazonaws.com/codefresh-charts/
