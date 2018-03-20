@@ -43,7 +43,7 @@ steps:
     title: Helm Upgrade
     image: 'codefresh/plugin-helm:2.8.0'
     environment:
-      - CHART_NAME=codefresh-charts/node-js
+      - CHART_NAME=metrix-charts/node-js
       - RELEASE_NAME=nodejs-test
       - KUBE_CONTEXT=cluster-1@metrix-io
       - NAMESPACE=default
