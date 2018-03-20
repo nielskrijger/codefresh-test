@@ -5,8 +5,8 @@ image:
   pullSecret: codefresh-generated-676206137628.dkr.ecr.eu-west-1.amazonaws.com-codefresh-default
 resources:
   requests:
-    memory: 512Mi
-    cpu: 300m
+    memory: 256Mi
+    cpu: 150m
 service:
   type: LoadBalancer
   port: 80
